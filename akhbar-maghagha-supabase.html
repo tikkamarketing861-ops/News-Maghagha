@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أخبار مغاغة | مصدر الأخبار المحلية الموثوقة</title>
+  <meta name="description" content="أخبار مغاغة - مصدر الأخبار المحلية الموثوقة">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f4f6f8;color:#111827}
+    a{text-decoration:none;color:inherit}
+    .top{height:34px;background:#fff;border-bottom:1px solid #eee;color:#667085;font-size:12px}
+    .top .wrap{max-width:900px;margin:auto;display:flex;justify-content:space-between;align-items:center;height:100%}
+    header{background:#fff;padding:18px 20px}
+    .head{max-width:900px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-size:38px;font-weight:800;white-space:nowrap;letter-spacing:-2px}
+    .logo span{color:#c91524}.logo b{color:#101828}
+    .tagline{font-size:12px;color:#667085;margin-top:3px}
+    .search{display:flex;width:260px;height:42px}
+    .search input{width:100%;border:1px solid #e5e7eb;border-radius:7px 0 0 7px;padding:0 12px;outline:none}
+    .search button{width:48px;border:0;background:#c91524;color:#fff;border-radius:0 7px 7px 0;cursor:pointer}
+    .social{display:flex;gap:8px}.social span{width:32px;height:32px;border-radius:50%;background:#eef1f4;display:grid;place-items:center;font-weight:bold;color:#344054}
+    nav{background:#101d2e;color:#fff}
+    nav .wrap{max-width:900px;margin:auto;display:flex;justify-content:flex-start}
+    nav a{padding:14px 18px;font-size:14px}
+    nav a.active,nav a:hover{background:#c91524}
+    .breaking{background:#cf1726;color:#fff}
+    .breaking .wrap{max-width:900px;margin:auto;height:34px;display:flex;align-items:center;gap:12px;font-size:13px}
+    .breaking strong{background:#9f0e19;padding:6px 12px;border-radius:3px}
+    main{max-width:900px;margin:18px auto 50px}
+    .hero-grid{display:grid;grid-template-columns:1.35fr .75fr;gap:14px}
+    .hero{height:295px;border-radius:9px;background:linear-gradient(135deg,#b9a78e,#15171a);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:25px;color:#fff}
+    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 25%,rgba(0,0,0,.85))}
+    .hero-content{position:relative;z-index:1;width:100%}
+    .badge{display:inline-block;background:#d51b2a;padding:6px 10px;border-radius:3px;font-size:11px;margin-bottom:10px}
+    .hero h1{font-size:26px;margin:0 0 8px}
+    .hero p{margin:0;font-size:13px;color:#eee}
+    .panel{background:#fff;border:1px solid #e5e7eb;border-radius:9px;min-height:295px;padding:16px}
+    .section-title{font-size:18px;font-weight:800;border-right:4px solid #d01929;padding-right:9px;margin:0 0 16px}
+    .latest-item{padding:12px 0;border-bottom:1px solid #eee}
+    .latest-item:last-child{border-bottom:0}
+    .latest-item h3{font-size:14px;margin:0 0 6px;line-height:1.6}
+    .date{font-size:10px;color:#98a2b3}
+    .empty{color:#98a2b3;text-align:center;padding:55px 10px;font-size:13px}
+    .below-title{margin:18px 0 12px}
+    .archive{background:#101d2e;color:#fff;border-radius:9px;padding:20px 25px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .archive h2{margin:0 0 8px;font-size:18px}
+    .archive p{margin:0;color:#d0d5dd;font-size:12px}
+    .btn{display:inline-block;background:#d21b2a;color:#fff;padding:11px 18px;border-radius:6px;font-size:12px;white-space:nowrap}
+    .ad{height:75px;background:#fff;border:1px dashed #d0d5dd;border-radius:8px;margin:18px 0;display:grid;place-items:center;color:#98a2b3;font-size:12px}
+    footer{background:#101d2e;color:#fff;padding:42px 20px}
+    footer .wrap{max-width:900px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px}
+    footer h3{margin:0 0 15px;font-size:17px}
+    footer p,footer a{font-size:11px;color:#cbd5e1;line-height:2}
+    .copy{max-width:900px;margin:28px auto 0;padding-top:18px;border-top:1px solid #273449;text-align:center;color:#cbd5e1;font-size:11px}
+    .loading{padding:50px;text-align:center;color:#98a2b3}
+    .article-list{margin-top:18px;background:#fff;border-radius:9px;border:1px solid #e5e7eb;padding:18px}
+    .article-card{padding:14px 0;border-bottom:1px solid #eee}
+    .article-card:last-child{border:0}
+    .article-card h2{font-size:18px;margin:0 0 8px}
+    .article-card p{font-size:12px;color:#667085;margin:0 0 8px}
+    @media(max-width:760px){
+      .top .wrap,.head,nav .wrap,.breaking .wrap,main{max-width:none;margin-left:12px;margin-right:12px}
+      .head{flex-wrap:wrap;justify-content:center}.search{order:3;width:100%}
+      .logo{font-size:32px}nav .wrap{overflow:auto}nav a{white-space:nowrap;padding:13px 12px}
+      .hero-grid{grid-template-columns:1fr}.hero{height:260px}.panel{min-height:auto}
+      .archive{flex-direction:column;align-items:flex-start}.archive .btn{align-self:flex-start}
+      footer .wrap{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="top"><div class="wrap"><span>أرشيف تاريخي + أخبار مستمرة</span><span id="today"></span></div></div>
+
+  <header>
+    <div class="head">
+      <div>
+        <div class="logo"><b>أخبار</b> <span>مغاغة</span></div>
+        <div class="tagline">مصدر الأخبار المحلية الموثوقة</div>
+      </div>
+      <form class="search" id="searchForm">
+        <input id="searchInput" type="search" placeholder="إبحث عن خبر...">
+        <button type="submit">⌕</button>
+      </form>
+      <div class="social"><span>f</span><span>▶</span><span>𝕏</span><span>◎</span></div>
+    </div>
+  </header>
+
+  <nav><div class="wrap">
+    <a class="active" href="#">الرئيسية</a>
+    <a href="#latest">أخبار عاجلة</a>
+    <a href="#latest">حوادث</a>
+    <a href="#latest">خدمات</a>
+    <a href="#latest">رياضة</a>
+    <a href="#latest">محليات</a>
+    <a href="#archive">الأرشيف</a>
+    <a href="#about">لوحة التحكم</a>
+  </div></nav>
+
+  <div class="breaking"><div class="wrap"><strong>عاجل ⚡</strong><span>أخبار مغاغة — تابع أحدث التطورات المحلية أولاً بأول</span></div></div>
+
+  <main>
+    <section class="hero-grid">
+      <div class="hero" id="hero">
+        <div class="hero-content">
+          <span class="badge">أخبار مغاغة</span>
+          <h1 id="heroTitle">جاري تحميل أحدث الأخبار...</h1>
+          <p id="heroMeta">يتم الآن الاتصال بقاعدة الأخبار.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2 class="section-title">آخر الأخبار</h2>
+        <div id="latestSide"><div class="loading">جاري تحميل الأخبار...</div></div>
+      </div>
+    </section>
+
+    <h2 class="section-title below-title" id="latest">أحدث ما نُشر</h2>
+    <section class="article-list" id="articles">
+      <div class="loading">جاري تحميل الأخبار...</div>
+    </section>
+
+    <section class="archive" id="archive">
+      <div>
+        <h2>🗃️ أرشيف أخبار مغاغة</h2>
+        <p>أرشيف قابل للبحث والتوسع، من الأخبار القديمة إلى الأخبار المنشورة حالياً.</p>
+      </div>
+      <a class="btn" href="#latest">فتح الأرشيف والبحث ←</a>
+    </section>
+
+    <div class="ad">مساحة إعلانية</div>
+  </main>
+
+  <footer id="about">
+    <div class="wrap">
+      <div>
+        <h3>أخبار مغاغة</h3>
+        <p>صفحة إخبارية محلية مع أرشيف تاريخي، تعمل على نشر الأخبار والتطورات المحلية بمصادر موثوقة.</p>
+      </div>
+      <div><h3>الأقسام</h3><a href="#latest">أخبار مغاغة</a><br><a href="#latest">حوادث</a><br><a href="#latest">خدمات</a></div>
+      <div><h3>الأرشيف</h3><a href="#archive">بحث الأخبار</a><br><a href="#archive">السنوات</a></div>
+      <div><h3>الإدارة</h3><a href="#about">لوحة التحكم</a><br><a href="#about">صفحة فيسبوك</a></div>
+    </div>
+    <div class="copy">© 2026 أخبار مغاغة — جميع الحقوق محفوظة</div>
+  </footer>
+
+<script>
+const SUPABASE_URL = "https://wvbamyqxjzsianjhhrbf.supabase.co";
+const SUPABASE_KEY = "sb_publishable_dHUjbfTpZZK2aODmfs1vhw_7nNiSM8h";
+const API = SUPABASE_URL + "/rest/v1/articles";
+
+const headers = {
+  "apikey": SUPABASE_KEY,
+  "Authorization": "Bearer " + SUPABASE_KEY
+};
+
+function escapeHtml(value){
+  return String(value ?? "").replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  }[c]));
+}
+
+function formatDate(value){
+  if(!value) return "";
+  try{
+    return new Intl.DateTimeFormat("ar-EG",{year:"numeric",month:"long",day:"numeric",hour:"2-digit",minute:"2-digit"}).format(new Date(value));
+  }catch(e){ return value; }
+}
+
+function articleText(a){
+  return a.excerpt || a.description || a.summary || a.content || "";
+}
+
+async function loadArticles(search=""){
+  const params = new URLSearchParams({
+    select:"*",
+    status:"eq.published",
+    order:"created_at.desc",
+    limit:"20"
+  });
+  if(search) params.set("title","ilike.*"+search.replace(/[*]/g,"")+"*");
+
+  try{
+    const res = await fetch(API + "?" + params.toString(), {headers});
+    if(!res.ok) throw new Error("HTTP " + res.status);
+    return await res.json();
+  }catch(err){
+    console.error(err);
+    throw err;
+  }
+}
+
+function render(articles){
+  const side = document.getElementById("latestSide");
+  const list = document.getElementById("articles");
+
+  if(!articles.length){
+    document.getElementById("heroTitle").textContent = "لا توجد أخبار منشورة حالياً";
+    document.getElementById("heroMeta").textContent = "أضف أول خبر من قاعدة البيانات ليظهر هنا.";
+    side.innerHTML = '<div class="empty">لا توجد أخبار منشورة حتى الآن.</div>';
+    list.innerHTML = '<div class="empty">لا توجد أخبار مطابقة.</div>';
+    return;
+  }
+
+  const first = articles[0];
+  document.getElementById("heroTitle").textContent = first.title || "أحدث خبر";
+  document.getElementById("heroMeta").textContent = formatDate(first.created_at);
+
+  side.innerHTML = articles.slice(0,6).map(a => `
+    <div class="latest-item">
+      <h3>${escapeHtml(a.title)}</h3>
+      <div class="date">${escapeHtml(formatDate(a.created_at))}</div>
+    </div>
+  `).join("");
+
+  list.innerHTML = articles.map(a => `
+    <article class="article-card">
+      <h2>${escapeHtml(a.title)}</h2>
+      <div class="date">${escapeHtml(formatDate(a.created_at))}</div>
+      ${articleText(a) ? `<p>${escapeHtml(articleText(a)).slice(0,280)}</p>` : ""}
+    </article>
+  `).join("");
+}
+
+async function start(){
+  document.getElementById("today").textContent = new Intl.DateTimeFormat("ar-EG",{weekday:"long",year:"numeric",month:"long",day:"numeric"}).format(new Date());
+  try{
+    render(await loadArticles());
+  }catch(err){
+    document.getElementById("heroTitle").textContent = "تعذر تحميل الأخبار";
+    document.getElementById("heroMeta").textContent = "تأكد من إعدادات Supabase وRLS.";
+    document.getElementById("latestSide").innerHTML = '<div class="empty">حدث خطأ أثناء الاتصال بقاعدة البيانات.</div>';
+    document.getElementById("articles").innerHTML = '<div class="empty">تعذر الاتصال بقاعدة الأخبار.</div>';
+  }
+}
+
+document.getElementById("searchForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const q = document.getElementById("searchInput").value.trim();
+  try{ render(await loadArticles(q)); }catch(err){}
+});
+
+start();
+</script>
+</body>
+</html>
